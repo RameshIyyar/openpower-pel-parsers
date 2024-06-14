@@ -16,7 +16,7 @@
 | Delete all PELs | peltool -D/--delete-all | NA | peltool.py -D/--delete-all | No |
 | File containing SRC regular expressions to ignore | peltool -l -s/--scrub "src_scrub_file" | NA | peltool.py -l --scrub "src_scrub_file" | C++ tool users |
 | Display PEL(s) in hexdump instead of JSON | peltool -x | NA | peltool.py -x/--hex | No |
-| List or display archived PELs | peltool --archive | NA | peltool.py -A/--archive | No |
+| List or display archived PELs (Only in BMC env, use -p for non-BMC env) | peltool --archive | NA | peltool.py -A/--archive | No |
 | Only parse serviceable (not info/recovered) PELs | NA | peltool.py -s/--serviceable | Same | No, is it needed? It is default operation for -l/-a/-n |
 | Only parse non-serviceable (info/recovered) PELs | NA | peltool.py -n/--non-serviceable | peltool.py -N/--non-serviceable | Python tool users |
 | Skip loading plugins | NA | peltool.py -p/--no-plugins | peltool.py -P/--skip-parser-plugins | No, dev only options |
