@@ -11,7 +11,7 @@
 | Reverse order of output | peltool -lr | NA | peltool.py -l -r/--reverse | No |
 | Include hidden PELs | peltool -lh | NA | peltool.py -l -H/--hidden | C++ tool users |
 | Include informational PELs | peltool -l -f/--info | NA | peltool -l -S 'informational' | C++ tool users |
-| List only critical system terminating PELs | peltool -t/--termination | NA | peltool.py -t/--termination | No | 
+| List only critical system terminating PELs | peltool -l -t/--termination | NA | peltool.py -lO -t/--termination | C++ tool users | 
 | Delete a PEL based on its ID | peltool -d/--delete "pelID" | NA | peltool.py -d/--delete "pelID" | No |
 | Delete all PELs | peltool -D/--delete-all | NA | peltool.py -D/--delete-all | No |
 | File containing SRC regular expressions to ignore | peltool -l -s/--scrub "src_scrub_file" | NA | peltool.py -l --scrub "src_scrub_file" | C++ tool users |
