@@ -82,7 +82,7 @@ if "-x" then
 - `-d` => `-c` // Delete a PEL, Delete -> Clear
 - `--delete` => `--clear` // Delete a PEL, Delete -> Clear
 - `-D` => `-C` // Delete all PELs, Delete All -> Clear All
-- `--delete-all` => "--clear-all" // Delete all PELs, Delete All -> Clear All
+- `--delete-all` => `--clear-all` // Delete all PELs, Delete All -> Clear All
 - `-c` => `-x` // Clean a processed PELs file
 - `--clean` => `--delete` // Clean a processed PELs file
 - `-j` -> `-d` // Write PELs (which are available in the given directory) into JSON format
