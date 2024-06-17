@@ -81,7 +81,7 @@ if "-x" then
 - `-n` => `-N` // PELs count
 - `-d` => `-c` // Delete a PEL, Delete -> Clear
 - `--delete` => `--clear` // Delete a PEL, Delete -> Clear
-- `-D" => `-C" // Delete all PELs, Delete All -> Clear All
+- `-D` => `-C` // Delete all PELs, Delete All -> Clear All
 - `--delete-all` => "--clear-all" // Delete all PELs, Delete All -> Clear All
 - `-c` => `-x` // Clean a processed PELs file
 - `--clean` => `--delete` // Clean a processed PELs file
