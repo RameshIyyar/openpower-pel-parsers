@@ -28,6 +28,127 @@
 | Get PELs based on the given severities along with servicable logs | NA | NA | peltool.py -S "severity1,severity2,..." | No |
 | Get PELs based on the given severities | NA | NA | peltool.py -l -O/--only -S "severity1,..." | No |
 
+### Tool usage
+
+#### Get Individual PEL
+
+- Display a PEL using its Raw PEL file: `peltool.py -f <file>`
+- Display a PEL based on its ID: `peltool.py -i <pelId>`
+- Display a PEL based on its BMC Event ID: `peltool.py --bmc-id <bmcEventLogId>`
+
+#### Get Serviceable PELs
+
+**_Serviceable == All PELs except Informational and Recovered_**
+
+- Display all servicable PELs data: `peltool.py -a` or `peltool.py -s`
+- List all servicable PELs summary: `peltool.py -l`
+- Show number of servicable PELs: `peltool.py -n`
+
+#### Get Hidden PELs
+
+**_Hidden == NonServiceable == Informational and Recovered_**
+
+- List all servicable + hidden PELs summary: `peltool.py -lH`
+- Display all servicable + hidden PELs data: `peltool.py -aH`
+- Show number of servicable + hidden PELs: `peltool.py -nH`
+- List only hidden PELs summary: `peltool.py -lOH`
+- Display only hidden PELs data: `peltool.py -aOH` or `peltool.py -N`
+- Show only number of hidden PELs: `peltool.py -nOH`
+
+#### Get Informational PELs
+
+- List all servicable + informational PELs summary: `peltool.py -l -S Informational`
+- Display all servicable + informational PELs data: `peltool.py -a -S Informational`
+- Show number of servicable + informational PELs: `peltool.py -n -S Informational`
+- List only informational PELs summary: `peltool.py -lO -S Informational`
+- Display only informational PELs data: `peltool.py -aO -S Informational`
+- Show only number of servicable + informational PELs: `peltool.py -nO -S Informational`
+
+#### Get Recovered PELs
+
+- List all servicable + recovered PELs summary: `peltool.py -l -S Recovered`
+- Display all servicable + recovered PELs data: `peltool.py -a -S Recovered`
+- Show number of servicable + recovered PELs: `peltool.py -n -S Recovered`
+- List only recovered PELs summary: `peltool.py -lO -S Recovered`
+- Display only recovered PELs data: `peltool.py -aO -S Recovered`
+- Show only number of servicable + recovered PELs: `peltool.py -nO -S Recovered`
+
+#### Get Critical System Terminate PELs
+
+- List only critical system terminating PELs summary: `peltool.py -lOt`
+- Display only critical system terminating PELs: `peltool.py -aOt`
+- Show only number of critical system terminating PELs: `peltool.py -nOt`
+
+#### Get PELs based on the Severity
+
+- List only Unrecoverable + Predictive PELs summary: `peltool.py -lO -S Unrecoverable,Predictive`
+- Display only Unrecoverable + Informational PELs data: `peltool.py -aO -S Unrecoverable,Informational`
+- Show only number of Unrecoverable + Recovered PELs: `peltool.py -nO -S Unrecoverable,Recovered`
+- List all hidden + only Unrecoverable PELs summary: `peltool.py -lOH -S Unrecoverable`
+
+**Note:** Check the usage by running peltool.py -h to see the supported severities.
+
+#### Get only required PELs
+
+- List only Critical PELs summary: `peltool.py -lO -S Critical`
+- Display only Critical PELs data: `peltool.py -aO -S Critical`
+- Show only number of Critical PELs: `peltool.py -nO -S Critical`
+- List only critical system terminating + non-serviceable PELs: `peltool.py -lOtN`
+
+**Note:** All the above different use case options will be used along with `-O`. You just need to pass the appropriate option name.
+
+#### Get different PELs together
+
+#### Delete PEL
+
+- Delete a PEL based on its ID: `peltool.py -d <pelId>`
+- Delete all PELs: `peltool.py -D`
+
+#### Reverse PEL
+
+- Reverse order of any option output: `peltool.py -<optionName>r`
+  - List all servicable PELs summary in reverse order:`peltool.py -lr`
+
+#### Ignore the specified set of SRC PELs
+
+- Ignore PELs that contain the SRCs mentioned in the file: `peltool.py -<optionName> --scrub <src_scrub_file>`
+  - List all serviceable PELs summary except matched SRC: `peltool.py -l --scrub <src_scrub_file>`
+
+#### Get PEL in Hexdecimal format
+
+- Get PEL in hexdecimal format: `peltool.py -<optionName> -x`
+  - List all serviceable PELs summary in hexdecimal format: `peltool.py -lx`
+
+#### Get Archived PELs
+
+- Get archived PELs: `peltool.py -<optionName> -A`
+  - List all serviceable PELs summary from archive: `peltool.py -lA`
+
+**Note:**
+
+- It is only supported in a BMC environment. For non-BMC environments, use the `-p` option to specify the path containing archived PELs.
+- All the above different use case options will be used along with archive path. You just need to pass the appropriate option name.
+
+#### Save PELs in JSON format
+
+- Process all files in a given path and save as filename.json: `peltool.py -j -p <input_path> -o <output_path>`
+- Process specific extension files in a given path and save as filename.json: `peltool.py -j -p <input_path> -o <output_path> -e <extension>`
+- Process specific extension files in a given path and save as filename.json, then clean the processed input files: `peltool.py -j -p <input_path> -o <output_path> -e <extension> -c`
+
+**Note:** It is only supported in a Non-BMC environment.
+
+~~Do we need to support in the BMC environment??~~
+
+#### Get PELs from the file(s)/directory(s) in Non-BMC environment
+
+- Get PELs from non-BMC enviroment: `peltool.py -p <path> -<optionNames>`
+  - List all serviceable PELs summary from non-BMC enviroment: `peltool.py -p </path/to/PEL/files> -l`
+
+**Note:** All the above different use case options will be supported in a non-BMC environment. You just need to pass the appropriate option name.
+
+----
+Backup
+----
 
 ### Which tool users need to compromise??
 
@@ -90,7 +211,7 @@ if "-x" then
 
 **Note:** We don't need to change `--skip-parser-plugins` to `--no-plugins` since it's a development-only option. This is the only option we are renaming in the new Python tool.
 
-# Final peltool option mapping 
+# Final peltool option mapping
 
 | Operation  | C++ peltool | Old Python peltool | New Python peltool | Who impactes | Conflicts |
 | -----------|:-----------:|--------------------|:------------------:|:------------------:|:------------------:|
