@@ -99,6 +99,14 @@
 
 #### Get different PELs together
 
+ Good to support???
+ 
+- Display all serviceable and non-serviceable PELs data: `peltool.py -sN`
+- Display all serviceable and critical system terminating PELs data: `peltool.py -st`
+  - Actually, it is of no use because the serviceable PELs contains critical system-terminating PELs.
+- Display all non-serviceable and critical system terminating PELs data: `peltool.py -Nt`
+
+
 #### Delete PEL
 
 - Delete a PEL based on its ID: `peltool.py -d <pelId>`
