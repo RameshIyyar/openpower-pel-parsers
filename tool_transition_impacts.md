@@ -36,7 +36,7 @@
 - Display a PEL based on its ID: `peltool.py -i <pelId>`
 - Display a PEL based on its BMC Event ID: `peltool.py --bmc-id <bmcEventLogId>`
 - Display PELs based on its PLID (Platform Log ID) to get related PELs: `peltool.py --plid <platformLogId>`
-- Display a PEL using its Raw PEL file: `peltool.py -f <file>`
+- Display a PEL using its Raw PEL file: `peltool.py -f </path/to/file>`
 
 #### Get Serviceable PELs
 
@@ -121,8 +121,8 @@
 
 #### Ignore the specified set of SRC PELs
 
-- Ignore PELs that contain the SRCs mentioned in the file: `peltool.py -<optionName> --scrub <src_scrub_file>`
-  - List all serviceable PELs summary except matched SRC: `peltool.py -l --scrub <src_scrub_file>`
+- Ignore PELs that contain the SRCs mentioned in the file: `peltool.py -<optionName> --scrub </path/to/file/which/contains/srcs/to/ignore>`
+  - List all serviceable PELs summary except matched SRC: `peltool.py -l --scrub </path/to/file/which/contains/srcs/to/ignore>`
 
 #### Get PEL in Hexdecimal format
 
@@ -141,18 +141,18 @@
 
 #### Save PELs in JSON format
 
-- Process all files in a given path and save as filename.json: `peltool.py -j -p <input_path> -o <output_path>`
-- Process specific extension files in a given path and save as filename.json: `peltool.py -j -p <input_path> -o <output_path> -e <extension>`
-- Process specific extension files in a given path and save as filename.json, then clean the processed input files: `peltool.py -j -p <input_path> -o <output_path> -e <extension> -c`
+- Process all files in a given path and save as filename.json: `peltool.py -j -p </path/to/get/pel/files/to/process> -o </path/to/put/processed/pel/files>`
+- Process specific extension files in a given path and save as filename.json: `peltool.py -j -p </path/to/get/pel/files/to/process> -o </path/to/put/processed/pel/files> -e <extension>`
+- Process specific extension files in a given path and save as filename.json, then clean the processed input files: `peltool.py -j -p </path/to/get/pel/files/to/process> -o </path/to/put/processed/pel/files> -e <extension> -c`
 
 **Note:** It is only supported in a Non-BMC environment.
 
 ~~Do we need to support in the BMC environment??~~
 
-#### Get PELs from the directory in Non-BMC environment
+#### Get PEL(s) from the directory in Non-BMC environment
 
-- Get PELs from non-BMC enviroment: `peltool.py -p <path> -<optionNames>`
-  - List all serviceable PELs summary from non-BMC enviroment: `peltool.py -p </path/to/PEL/files> -l`
+- Get PELs from non-BMC enviroment: `peltool.py -p </path/to/pel/files> -<optionNames>`
+  - List all serviceable PELs summary from non-BMC enviroment: `peltool.py -p </path/to/pel/files> -l`
 
 **Note:** All the above different use case options will be supported in a non-BMC environment. You just need to pass the appropriate option name.
 
