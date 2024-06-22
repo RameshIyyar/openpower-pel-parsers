@@ -28,6 +28,7 @@
 | Get PELs based on the given severities along with servicable logs | NA | NA | peltool.py -S "severity1,severity2,..." | No |
 | Get PELs based on the given severities | NA | NA | peltool.py -l -O/--only -S "severity1,..." | No |
 
+---
 ### Tool usage
 
 #### Get Individual PEL
