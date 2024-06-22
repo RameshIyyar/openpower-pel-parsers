@@ -149,7 +149,7 @@
 
 ~~Do we need to support in the BMC environment??~~
 
-#### Get PELs from the file(s)/directory(s) in Non-BMC environment
+#### Get PELs from the directory in Non-BMC environment
 
 - Get PELs from non-BMC enviroment: `peltool.py -p <path> -<optionNames>`
   - List all serviceable PELs summary from non-BMC enviroment: `peltool.py -p </path/to/PEL/files> -l`
