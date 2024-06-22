@@ -32,16 +32,17 @@
 
 #### Get Individual PEL
 
-- Display a PEL using its Raw PEL file: `peltool.py -f <file>`
 - Display a PEL based on its ID: `peltool.py -i <pelId>`
 - Display a PEL based on its BMC Event ID: `peltool.py --bmc-id <bmcEventLogId>`
+- Display PELs based on its PLID (Platform Log ID) to get related PELs: `peltool.py --plid <platformLogId>`
+- Display a PEL using its Raw PEL file: `peltool.py -f <file>`
 
 #### Get Serviceable PELs
 
 **_Serviceable == All PELs except Informational and Recovered_**
 
-- Display all servicable PELs data: `peltool.py -a` or `peltool.py -s`
 - List all servicable PELs summary: `peltool.py -l`
+- Display all servicable PELs data: `peltool.py -a` or `peltool.py -s`
 - Show number of servicable PELs: `peltool.py -n`
 
 #### Get Hidden PELs
@@ -52,8 +53,8 @@
 - Display all servicable + hidden PELs data: `peltool.py -aH`
 - Show number of servicable + hidden PELs: `peltool.py -nH`
 - List only hidden PELs summary: `peltool.py -lOH`
-- Display only hidden PELs data: `peltool.py -aOH` or `peltool.py -N`
-- Show only number of hidden PELs: `peltool.py -nOH`
+- Display only hidden PELs data: `peltool.py -aHO` or `peltool.py -N`
+- Show only number of hidden PELs: `peltool.py -nHO`
 
 #### Get Informational PELs
 
@@ -76,8 +77,8 @@
 #### Get Critical System Terminate PELs
 
 - List only critical system terminating PELs summary: `peltool.py -lOt`
-- Display only critical system terminating PELs: `peltool.py -aOt`
-- Show only number of critical system terminating PELs: `peltool.py -nOt`
+- Display only critical system terminating PELs: `peltool.py -atO`
+- Show only number of critical system terminating PELs: `peltool.py -ntO`
 
 #### Get PELs based on the Severity
 
@@ -86,7 +87,7 @@
 - Show only number of Unrecoverable + Recovered PELs: `peltool.py -nO -S Unrecoverable,Recovered`
 - List all hidden + only Unrecoverable PELs summary: `peltool.py -lOH -S Unrecoverable`
 
-**Note:** Check the usage by running peltool.py -h to see the supported severities.
+**Note:** Check the usage by running `peltool.py -h` to see the supported severities.
 
 #### Get only required PELs
 
@@ -101,10 +102,10 @@
 
  Good to support???
  
-- Display all serviceable and non-serviceable PELs data: `peltool.py -sN`
+- Display all serviceable and non-serviceable PELs data: `peltool.py -sN` or `peltool.py -sH`
 - Display all serviceable and critical system terminating PELs data: `peltool.py -st`
   - Actually, it is of no use because the serviceable PELs contains critical system-terminating PELs.
-- Display all non-serviceable and critical system terminating PELs data: `peltool.py -Nt`
+- Display all non-serviceable and critical system terminating PELs data: `peltool.py -Nt` or `peltool.py -Ht`
 
 
 #### Delete PEL
