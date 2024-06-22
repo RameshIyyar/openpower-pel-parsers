@@ -141,9 +141,9 @@
 
 #### Save PELs in JSON format
 
-- Process all files in a given path and save as filename.json: `peltool.py -j -p </path/to/get/pel/files/to/process> -o </path/to/put/processed/pel/files>`
-- Process specific extension files in a given path and save as filename.json: `peltool.py -j -p </path/to/get/pel/files/to/process> -o </path/to/put/processed/pel/files> -e <extension>`
-- Process specific extension files in a given path and save as filename.json, then clean the processed input files: `peltool.py -j -p </path/to/get/pel/files/to/process> -o </path/to/put/processed/pel/files> -e <extension> -c`
+- Process all files in a given path and save as filename.json: `peltool.py -j -p </path/to/get/pel/files/to/process> -o </path/to/put/processed/pel/json/files>`
+- Process specific extension files in a given path and save as filename.json: `peltool.py -j -p </path/to/get/pel/files/to/process> -o </path/to/put/processed/pel/json/files> -e <extension>`
+- Process specific extension files in a given path and save as filename.json, then clean the processed input files: `peltool.py -j -p </path/to/get/pel/files/to/process> -o </path/to/put/processed/pel/json/files> -e <extension> -c`
 
 **Note:** It is only supported in a Non-BMC environment.
 
