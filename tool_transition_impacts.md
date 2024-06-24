@@ -111,8 +111,10 @@
 
 #### Ignore the specified set of SRC PELs
 
-- Ignore PELs that contain the SRCs mentioned in the file: `peltool.py -<optionName> --src-scrub </path/to/file/which/contains/srcs/to/ignore>`
-  - List all serviceable PELs summary except matched SRC: `peltool.py -l --src-scrub </path/to/file/which/contains/srcs/to/ignore>`
+- Ignore PELs that contain the SRCs mentioned in the file:
+  - `peltool.py -<optionName> --src-scrub </path/to/file/which/contains/srcs/to/ignore>`
+  - For example, List all serviceable PELs summary except matched SRC:
+    - `peltool.py -l --src-scrub </path/to/file/which/contains/srcs/to/ignore>`
 
 For example, `ignore_matched_srcs.txt`
 ```
@@ -139,9 +141,12 @@ src2
 
 #### Save PELs in JSON format
 
-- Process all files in a given path and save as filename.json: `peltool.py -j -p </path/to/get/pel/files/to/process> -o </path/to/put/processed/pel/json/files>`
-- Process specific extension files in a given path and save as filename.json: `peltool.py -j -p </path/to/get/pel/files/to/process> -o </path/to/put/processed/pel/json/files> -e <extension>`
-- Process specific extension files in a given path and save as filename.json, then clean the processed original input files: `peltool.py -j -p </path/to/get/pel/files/to/process> -o </path/to/put/processed/pel/json/files> -e <extension> -c`
+- Process all files in a given path and save as filename.json:
+  - `peltool.py -j -p </path/to/get/pel/files/to/process> -o </path/to/put/processed/pel/json/files>`
+- Process specific extension files in a given path and save as filename.json:
+  - `peltool.py -j -p </path/to/get/pel/files/to/process> -o </path/to/put/processed/pel/json/files> -e <extension>`
+- Process specific extension files in a given path and save as filename.json, then clean the processed original input files:
+  - `peltool.py -j -p </path/to/get/pel/files/to/process> -o </path/to/put/processed/pel/json/files> -e <extension> -c`
 
 **Note:**
 
