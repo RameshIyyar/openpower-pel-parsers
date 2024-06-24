@@ -36,6 +36,7 @@
 - Display a PEL based on its ID: `peltool.py -i <pelId>`
 - Display a PEL based on its BMC Event ID: `peltool.py --bmc-id <bmcEventLogId>`
 - Display PELs based on its PLID (Platform Log ID) to get related PELs: `peltool.py --plid <platformLogId>`
+- Display PELs based on its SRC (System Reference Code) id to get related PELs: `peltool.py --src-id <srcId>`
 - Display a PEL using its Raw PEL file: `peltool.py -f </path/to/file>`
 
 #### Get Serviceable PELs
@@ -109,12 +110,12 @@
 - Reverse order of any option output: `peltool.py -<optionName>r`
   - List all servicable PELs summary in reverse order:`peltool.py -lr`
 
-#### Ignore the specified set of SRC PELs
+#### Exclude the specified SRCs PELs
 
-- Ignore PELs that contain the SRCs mentioned in the file:
-  - `peltool.py -<optionName> --src-scrub </path/to/file/which/contains/srcs/to/ignore>`
+- Exclude PELs that contain the SRCs mentioned in the file:
+  - `peltool.py -<optionName> --src-exclude </path/to/file/which/contains/srcs/to/ignore>`
   - For example, List all serviceable PELs summary except matched SRC:
-    - `peltool.py -l --src-scrub </path/to/file/which/contains/srcs/to/ignore>`
+    - `peltool.py -l --src-exclude </path/to/file/which/contains/srcs/to/ignore>`
 
 For example, `ignore_matched_srcs.txt`
 ```
