@@ -43,7 +43,7 @@
 **_Serviceable == All PELs except Informational and Recovered_**
 
 - List all servicable PELs summary: `peltool.py -l`
-- Display all servicable PELs data: `peltool.py -a` or `peltool.py -s`
+- Display all servicable PELs data: `peltool.py -a`
 - Show number of servicable PELs: `peltool.py -n`
 
 #### Get Hidden PELs
@@ -54,7 +54,7 @@
 - Display all servicable + hidden PELs data: `peltool.py -aH`
 - Show number of servicable + hidden PELs: `peltool.py -nH`
 - List only hidden PELs summary: `peltool.py -lOH`
-- Display only hidden PELs data: `peltool.py -aHO` or `peltool.py -N`
+- Display only hidden PELs data: `peltool.py -aHO`
 - Show only number of hidden PELs: `peltool.py -nHO`
 
 #### Get Informational PELs
@@ -83,9 +83,9 @@
 
 #### Get PELs based on the Severity
 
-- List only Unrecoverable + Predictive PELs summary: `peltool.py -lO -S Unrecoverable,Predictive`
-- Display only Unrecoverable + Informational PELs data: `peltool.py -aO -S Unrecoverable,Informational`
-- Show only number of Unrecoverable + Recovered PELs: `peltool.py -nO -S Unrecoverable,Recovered`
+- List only Unrecoverable + Predictive PELs summary: `peltool.py -lO -S Unrecoverable Predictive`
+- Display only Unrecoverable + Informational PELs data: `peltool.py -aO -S Unrecoverable Informational`
+- Show only number of Unrecoverable + Recovered PELs: `peltool.py -nO -S Unrecoverable Recovered`
 - List all hidden + only Unrecoverable PELs summary: `peltool.py -lOH -S Unrecoverable`
 
 **Note:** Check the usage by running `peltool.py -h` to see the supported severities.
@@ -99,16 +99,6 @@
 
 **Note:** All the above different use case options will be used along with `-O`. You just need to pass the appropriate option name.
 
-#### Get different PELs together
-
- Good to support???
- 
-- Display all serviceable and non-serviceable PELs data: `peltool.py -sN` or `peltool.py -sH`
-- Display all serviceable and critical system terminating PELs data: `peltool.py -st`
-  - Actually, it is of no use because the serviceable PELs contains critical system-terminating PELs.
-- Display all non-serviceable and critical system terminating PELs data: `peltool.py -Nt` or `peltool.py -Ht`
-
-
 #### Delete PEL
 
 - Delete a PEL based on its ID: `peltool.py -d <pelId>`
@@ -121,8 +111,16 @@
 
 #### Ignore the specified set of SRC PELs
 
-- Ignore PELs that contain the SRCs mentioned in the file: `peltool.py -<optionName> --scrub </path/to/file/which/contains/srcs/to/ignore>`
-  - List all serviceable PELs summary except matched SRC: `peltool.py -l --scrub </path/to/file/which/contains/srcs/to/ignore>`
+- Ignore PELs that contain the SRCs mentioned in the file: `peltool.py -<optionName> --src-scrub </path/to/file/which/contains/srcs/to/ignore>`
+  - List all serviceable PELs summary except matched SRC: `peltool.py -l --src-scrub </path/to/file/which/contains/srcs/to/ignore>`
+
+For example, `ignore_matched_srcs.txt`
+```
+src1
+src2
+...
+```
+**Note:** SRCs need to be separated by newline.
 
 #### Get PEL in Hexdecimal format
 
@@ -143,11 +141,13 @@
 
 - Process all files in a given path and save as filename.json: `peltool.py -j -p </path/to/get/pel/files/to/process> -o </path/to/put/processed/pel/json/files>`
 - Process specific extension files in a given path and save as filename.json: `peltool.py -j -p </path/to/get/pel/files/to/process> -o </path/to/put/processed/pel/json/files> -e <extension>`
-- Process specific extension files in a given path and save as filename.json, then clean the processed input files: `peltool.py -j -p </path/to/get/pel/files/to/process> -o </path/to/put/processed/pel/json/files> -e <extension> -c`
+- Process specific extension files in a given path and save as filename.json, then clean the processed original input files: `peltool.py -j -p </path/to/get/pel/files/to/process> -o </path/to/put/processed/pel/json/files> -e <extension> -c`
 
-**Note:** It is only supported in a Non-BMC environment.
+**Note:**
 
-~~Do we need to support in the BMC environment??~~
+- For BMC environments, the `-p` option is not necessary as the default PEL storage path will be used. If you need to use the PEL archive path, then use `-A`.
+- If the `-o` (output directory) option is not provided, the PEL input directory will be used, and the output file will have a `.json` extension. This applies to both BMC and Non-BMC environments.
+- All the above different use case options will be used along with these options. You just need to pass the appropriate option name as per need.
 
 #### Get PEL(s) from the directory in Non-BMC environment
 
