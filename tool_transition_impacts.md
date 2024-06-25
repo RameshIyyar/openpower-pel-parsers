@@ -14,7 +14,7 @@
 | List only critical system terminating PELs | peltool -l -t/--termination | NA | peltool.py -lO -t/--termination | C++ tool users | 
 | Delete a PEL based on its ID | peltool -d/--delete "pelID" | NA | peltool.py -d/--delete "pelID" | No |
 | Delete all PELs | peltool -D/--delete-all | NA | peltool.py -D/--delete-all | No |
-| File containing SRC regular expressions to ignore | peltool -l -s/--scrub "src_scrub_file" | NA | peltool.py -l --scrub "src_scrub_file" | C++ tool users |
+| File containing SRC regular expressions to ignore | peltool -l -s/--scrub "src_scrub_file" | NA | peltool.py -l --src-exclude "src_exclude_file" | C++ tool users |
 | Display PEL(s) in hexdump instead of JSON | peltool -x | NA | peltool.py -x/--hex | No |
 | List or display archived PELs (Only in BMC env, use -p for non-BMC env) | peltool --archive | NA | peltool.py -A/--archive | No |
 | Only parse serviceable (not info/recovered) PELs | NA | peltool.py -s/--serviceable | Same | No, is it needed? It is default operation for -l/-a/-n |
@@ -27,6 +27,8 @@
 | Specify path to PELs (non-BMC enviroment only) | NA | NA | peltool.py -p/--path "pels_path" | No
 | Get PELs based on the given severities along with servicable logs | NA | NA | peltool.py -S "severity1,severity2,..." | No |
 | Get PELs based on the given severities | NA | NA | peltool.py -l -O/--only -S "severity1,..." | No |
+| Get PELs based on the PLID (platform log id) | NA | NA | peltool.py --plid <platformLogId> | No |
+| Get PELs based on the given SRC (System Reference Code) | NA | NA | peltool.py --src-id <srcId> | No |
 
 ---
 ### Tool usage
