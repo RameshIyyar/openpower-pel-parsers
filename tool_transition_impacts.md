@@ -43,15 +43,26 @@
 
 #### Get Serviceable PELs
 
-**_Serviceable == All PELs except Informational and Recovered_**
+The PEL is considered serviceable if it isn't informational (event severity), the report flag (event action flags) is set, and the hidden flag (event action flags) isn't set. Alternatively, it is serviceable if it is informational but the serviceAction flag (event action flags) is set.
 
 - List all servicable PELs summary: `peltool.py -l`
 - Display all servicable PELs data: `peltool.py -a`
 - Show number of servicable PELs: `peltool.py -n`
 
+**Note:** By default, the `-l/-a/-n` options return serviceable PELs. There is also a `-s` option that can be used to get serviceable PELs, which is mainly useful if you want to save the serviceable PELs as a JSON files, refer [here](./tool_transition_impacts.md#save-pels-in-json-format)
+
+#### Get Non-Serviceable PELs
+
+- List all servicable + non-servicable PELs summary: `peltool.py -lN`
+- Display all servicable + non-servicable PELs data: `peltool.py -aN`
+- Show number of servicable + non-servicable PELs: `peltool.py -nN`
+- List only non-servicable PELs summary: `peltool.py -lON`
+- Display only non-servicable PELs data: `peltool.py -aNO`
+- Show only number of non-servicable PELs: `peltool.py -nNO`
+  
 #### Get Hidden PELs
 
-**_Hidden == NonServiceable == Informational and Recovered_**
+The PEL is hidden if the hidden flag (event action flags) is set.
 
 - List all servicable + hidden PELs summary: `peltool.py -lH`
 - Display all servicable + hidden PELs data: `peltool.py -aH`
