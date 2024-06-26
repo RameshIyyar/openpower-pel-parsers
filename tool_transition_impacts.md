@@ -43,7 +43,7 @@
 
 #### Get Serviceable PELs
 
-The PEL is considered serviceable if it isn't informational (event severity), the report flag (event action flags) is set, and the hidden flag (event action flags) isn't set. Alternatively, it is serviceable if it is informational but the serviceAction flag (event action flags) is set.
+The PEL is considered serviceable if it isn't informational (event severity), the report flag (event action flags) is set, and the hidden flag (event action flags) isn't set. Alternatively, it is serviceable if it is informational but the service action flag (event action flags) is set.
 
 - List all servicable PELs summary: `peltool.py -l`
 - Display all servicable PELs data: `peltool.py -a`
