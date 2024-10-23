@@ -17,8 +17,8 @@
 | File containing SRC regular expressions to ignore | peltool -l -s/--scrub "src_scrub_file" | NA | peltool.py -l --src-exclude "src_exclude_file" | C++ tool users |
 | Display PEL(s) in hexdump instead of JSON | peltool -x | NA | peltool.py -x/--hex | No |
 | List or display archived PELs (Only in BMC env, use -p for non-BMC env) | peltool --archive | NA | peltool.py -A/--archive | No |
-| Only parse serviceable (not info/recovered) PELs | NA | peltool.py -s/--serviceable | Same | No, is it needed? It is default operation for -l/-a/-n |
-| Only parse non-serviceable (info/recovered) PELs | NA | peltool.py -n/--non-serviceable | peltool.py -N/--non-serviceable | Python tool users |
+| Only parse serviceable (not info/recovered) PELs | NA | peltool.py -s/--serviceable | peltool.py -l or -lOs | Python tool users |
+| Only parse non-serviceable (info/recovered) PELs | NA | peltool.py -n/--non-serviceable | peltool.py -lON | Python tool users |
 | Skip loading plugins | NA | peltool.py -p/--no-plugins | peltool.py -P/--skip-parser-plugins | No, dev only options |
 | Process all files in a directory and save as filename.json | NA | peltool.py -d/--directory "input_directory" -o/--output-dir "output_directory" | peltool.py -j/--json -p/--path "input_directory" -o/--output-dir "output_directory" | Python tool users |
 | Directory to write output files when processing a directory | NA | peltool.py -o/--output-dir "output_directory" | Same | No |
