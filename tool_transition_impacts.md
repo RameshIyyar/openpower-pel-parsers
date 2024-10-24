@@ -27,8 +27,8 @@
 | Specify path to PELs (non-BMC enviroment only) | NA | NA | peltool.py -p/--path "pels_path" | No
 | Get PELs based on the given severities along with servicable logs | NA | NA | peltool.py -S "severity1,severity2,..." | No |
 | Get PELs based on the given severities | NA | NA | peltool.py -l -O/--only -S "severity1,..." | No |
-| Get PELs based on the PLID (platform log id) | NA | NA | peltool.py --plid <platformLogId> | No |
-| Get PELs based on the given SRC (System Reference Code) | NA | NA | peltool.py --src-id <srcId> | No |
+| Get PELs based on the PLID (platform log id) | NA | NA | peltool.py --plid "platformLogId" | No |
+| Get PELs based on the given SRC (System Reference Code) | NA | NA | peltool.py --src "srcId" | No |
 
 ---
 ### Tool usage
