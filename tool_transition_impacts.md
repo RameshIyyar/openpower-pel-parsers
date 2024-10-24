@@ -14,7 +14,7 @@
 | List only critical system terminating PELs | peltool -l -t/--termination | NA | peltool.py -lO -t/--termination | C++ tool users | 
 | Delete a PEL based on its ID | peltool -d/--delete "pelID" | NA | peltool.py -d/--delete "pelID" | No |
 | Delete all PELs | peltool -D/--delete-all | NA | peltool.py -D/--delete-all | No |
-| File containing SRC regular expressions to ignore | peltool -l -s/--scrub "src_scrub_file" | NA | peltool.py -l --src-exclude "src_exclude_file" | C++ tool users |
+| File containing SRC regular expressions to ignore | peltool -l -s/--scrub "src_scrub_file" | NA | peltool.py --src-exclude "src_exclude_file" | C++ tool users |
 | Display PEL(s) in hexdump instead of JSON | peltool -x | NA | peltool.py -x/--hex | No |
 | List or display archived PELs (Only in BMC env, use -p for non-BMC env) | peltool --archive | NA | peltool.py -A/--archive | No |
 | Only parse serviceable (not info/recovered) PELs | NA | peltool.py -s/--serviceable | peltool.py -l or -lOs | Python tool users |
